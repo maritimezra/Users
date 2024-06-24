@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from rest_framework.permissions import AllowAny
 from rest_framework.authtoken.models import Token
 from .serializers import UserSerializer, RegisterSerializer, LoginSerializer
+from rest_framework.permissions import IsAuthenticated
 
 User = get_user_model()
 
@@ -40,3 +41,10 @@ class LogoutView(APIView):
         request.user.auth_token.delete()
         logout(request)
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class GetUsernameView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response({"username": request.user.username})

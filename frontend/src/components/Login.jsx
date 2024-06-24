@@ -16,6 +16,8 @@ function Login() {
         password,
       });
       localStorage.setItem('token', response.data.token);
+      console.log('Login successful')
+      console.log('Token:', response.data.token)
       navigate('/');
     } catch (err) {
       setError('Invalid credentials');
