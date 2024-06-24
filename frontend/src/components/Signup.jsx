@@ -17,7 +17,7 @@ function Signup() {
       return;
     }
     try {
-      await axios.post('http://127.0.0.1:8000/api/accounts/signup/', {
+      await axios.post('http://127.0.0.1:8000/api/accounts/register/', {
         email,
         username,
         password,
