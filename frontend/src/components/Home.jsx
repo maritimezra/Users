@@ -24,6 +24,9 @@ function Home() {
     return (
         <div>
             <h2>Hi, {username}</h2>
+            <button onClick={() => window.location.href = '/logout'}>
+                Logout
+            </button>
         </div>
     );
 }

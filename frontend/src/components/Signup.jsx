@@ -23,6 +23,7 @@ function Signup() {
         password,
         password2,
       });
+      console.log('Signup successful')
       navigate('/login');
     } catch (err) {
       setError('Failed to register');
